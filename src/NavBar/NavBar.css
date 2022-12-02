@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: #191970;
+}
+
+.logo {
+    width: 30%;
+    font-size: 46px;
+    font-weight: bold;
+    background: #6f7373;
+    background: -webkit-repeating-radial-gradient(ellipse farthest-corner at top right, #6f7373 0%, #ebeaf2 100%);
+    background: -moz-repeating-radial-gradient(ellipse farthest-corner at top right, #6f7373 0%, #ebeaf2 100%);
+    background: repeating-radial-gradient(ellipse farthest-corner at top right, #6f7373 0%, #ebeaf2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    margin: 0;
+}
+
+.header {
+    width: 65%;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    background: #6f7373;
+    background: -webkit-repeating-radial-gradient(ellipse farthest-corner at top right, #6f7373 0%, #ebeaf2 100%);
+    background: -moz-repeating-radial-gradient(ellipse farthest-corner at top right, #6f7373 0%, #ebeaf2 100%);
+    background: repeating-radial-gradient(ellipse farthest-corner at top right, #6f7373 0%, #ebeaf2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    font-weight: bold;
+}

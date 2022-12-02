@@ -1,0 +1,39 @@
+form {
+    background: #ccc;
+}
+
+.titleForm {
+    color: #191970;
+    text-shadow: 8px -8px 4px grey;
+    font-size: 20px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.field {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.form-input {
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 12px grey;
+    width: 300px;
+}
+
+.btnForm {
+    width: 150px;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 12px grey;
+    background: #191970;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 20px;
+}

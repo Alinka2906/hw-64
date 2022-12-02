@@ -1,0 +1,42 @@
+.contacts {
+    color: #191970;
+    text-shadow: 8px -8px 4px grey;
+    font-size: 20px;
+    padding-bottom: 10%;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-around;
+    color: #191970;
+    text-shadow: 8px -8px 4px grey;
+    font-size: 20px;
+    padding-top: 5%;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+.info {
+    width: 45%;
+}
+
+.contact-text {
+    text-align: left;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+.contact-image {
+    margin: 0;
+    border-radius: 10px;
+}
+
+.aboutImage {
+    width: 100%;
+    margin: 0;
+}
