@@ -1,20 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import axiosApi from "../../axiosApi";
-import type {PostsList} from "../../../type";
+import type {EnterPosts, PostApi} from "../../../type";
 import Posts from "../Posts/Posts";
 import Spinner from "../Spinner/Spinner";
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<PostApi[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getPosts = async () => {
       try {
         setLoading(true);
-        const postsResponse = await axiosApi.get<PostsList>('/dishes.json');
+        const postsResponse = await axiosApi.get<EnterPosts>('/posts.json');
         const posts = Object.keys(postsResponse.data).map(key => {
-          const post = postsResponse.data[key];
+          const post = postsResponse.data;
+          console.log(post)
           post.id = key;
           return post;
         });
@@ -29,12 +30,7 @@ const Home = () => {
   let post = (
     <div className="posts">
       {posts.map(post => (
-        <Posts
-          date={post.date}
-          title={post.title}
-          key={post.id}
-          id={post.id}
-        />
+        <Posts date={post.date} title={post.title} descriptions={post.descriptions}/>
       ))}
     </div>
   );
@@ -42,7 +38,6 @@ const Home = () => {
   if (loading) {
     post = <Spinner/>
   }
-
 
   return (
     <>

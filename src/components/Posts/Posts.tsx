@@ -12,7 +12,7 @@ const Posts:React.FC<Props> = ({posts}) => {
     <>
     <h4>Posts:</h4>
       {posts.map(post => (
-        <Post key={post.id} post={post}/>
+        <Post key={post.descriptions} post={post}/>
       ))}
     </>
   );

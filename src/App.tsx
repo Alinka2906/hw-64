@@ -9,6 +9,7 @@ import Post from "./components/Posts/Posts";
 import Posts from "./components/Posts/Posts";
 import About from "./components/About/About";
 import Contacts from "./components/Contacts/Contacts";
+import List from "./components/List/List";
 
 function App() {
   const [posts, setPosts] = useState<EnterPosts[]>([]);
@@ -28,7 +29,7 @@ function App() {
           <Home/>
         )}></Route>
         <Route path="/add" element={(
-          <AddForm onSubmit={addPosts}/>
+          <List/>
         )}></Route>
         <Route path="/about" element={(
           <About/>

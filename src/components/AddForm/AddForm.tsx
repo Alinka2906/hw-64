@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './AddForm.css';
 import {EnterPosts, PostApi} from "../../../type";
+import axiosApi from "../../axiosApi";
+import {useNavigate} from 'react-router-dom';
+
 
 interface Props {
   onSubmit: (post: EnterPosts) => void;
@@ -19,16 +22,20 @@ const AddForm: React.FC<Props> = ({onSubmit, existingPost}) => {
 
    const [posts, setPosts] = useState<EnterPosts>(initialState);
 
+
+
   const onPostsChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {name, value} = e.target;
     setPosts(prev => ({...prev, [name]: value}));
   };
 
   const onFormSubmit = (e: React.FormEvent) => {
+    alert(123)
     e.preventDefault()
     onSubmit({
       ...posts
     });
+    console.log(123)
   };
 
 
