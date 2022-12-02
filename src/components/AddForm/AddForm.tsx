@@ -1,15 +1,23 @@
 import React, {useState} from 'react';
 import './AddForm.css';
-import {EnterPosts} from "../../../type";
+import {EnterPosts, PostApi} from "../../../type";
 
 interface Props {
   onSubmit: (post: EnterPosts) => void;
+  existingPost?: PostApi;
 }
 
-const AddForm: React.FC<Props> = ({onSubmit}) => {
-  const [posts, setPosts] = useState<EnterPosts>(
-    {date:'', name:'', title: '', descriptions: '', id: ''}
-  );
+const AddForm: React.FC<Props> = ({onSubmit, existingPost}) => {
+  const initialState = existingPost ? {
+    ...existingPost,
+  } : {
+    date: '',
+    name: '',
+    title: '',
+    descriptions: '',
+  }
+
+   const [posts, setPosts] = useState<EnterPosts>(initialState);
 
   const onPostsChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {name, value} = e.target;
@@ -42,18 +50,6 @@ const AddForm: React.FC<Props> = ({onSubmit}) => {
         <div className="field">
           <input
             type="text"
-            name="name"
-            id="title"
-            className="form-input"
-            required
-            placeholder="Author"
-            value={posts.name}
-            onChange={onPostsChange}
-          />
-        </div>
-        <div className="field">
-          <input
-            type="text"
             name="title"
             id="title"
             className="form-input"
@@ -75,7 +71,7 @@ const AddForm: React.FC<Props> = ({onSubmit}) => {
         />
         </div>
         <div className="field">
-          <button type="submit" className="btnForm">Create</button>
+          <button type="submit" className="btnForm">{existingPost ? 'Update' : 'Create'}</button>
         </div>
       </div>
     </form>
